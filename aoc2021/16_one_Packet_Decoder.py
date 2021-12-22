@@ -52,4 +52,6 @@ while B != "":
             B = B[LVL:]
             stack.append((V, T, LT, LV))
 
+
+
 print(sum(p[0] for p in stack))
