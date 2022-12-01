@@ -14,7 +14,7 @@ typedef vector<int> vi;
 #define mp(x, y) make_pair(x, y)
 
 int main() {
-    cin.tie(0)->sync_with_stdio(0); cin.exceptions(cin.failbit);
+    cin.tie(0)->sync_with_stdio(0);
     for (string line; cin >> line;) {
      
     }    
