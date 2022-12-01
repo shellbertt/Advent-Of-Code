@@ -5,5 +5,12 @@ strs = lambda: list(lambda l: l.rstrip(), sys.stdin.readlines)
 Int = lambda: int(input())
 yn = lambda b: print('YES' if b else 'NO')
 
-print(input())
-input()
+a = []
+c = 0
+for l in sys.stdin:
+  if l.rstrip() != '':
+    c += int(l)
+  else:
+    a.append(c)
+    c = 0
+print(sum(sorted(a)[-3:]))
