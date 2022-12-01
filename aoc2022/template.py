@@ -5,5 +5,4 @@ strs = lambda: list(lambda l: l.rstrip(), sys.stdin.readlines)
 Int = lambda: int(input())
 yn = lambda b: print('YES' if b else 'NO')
 
-print(input())
-input()
+
