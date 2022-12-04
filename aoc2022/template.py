@@ -10,6 +10,7 @@ if eg: stdin = eg
 maybeint = lambda x: int(x) if x.isnumeric() else x
 ints = lambda: list(map(maybeint, stdin.splitlines()))
 strs = lambda: stdin.splitlines()
+splits = lambda s: list(map(lambda x: list(map(maybeint, x.split(s))), stdin.splitlines()))
 chunks = lambda: list(map(lambda c: list(map(maybeint, c.splitlines())), stdin.split('\n\n')))
 
 
