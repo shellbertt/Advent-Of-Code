@@ -8,9 +8,10 @@ stdin = sys.stdin.read().rstrip()
 if eg: stdin = eg
 #################
 maybeint = lambda x: int(x) if x.isnumeric() else x
-ints = lambda: list(map(maybeint, stdin.splitlines()))
+lmap = lambda f, *x: list(map(f, *x))
+ints = lambda: lmap(maybeint, stdin.splitlines())
 strs = lambda: stdin.splitlines()
-splits = lambda s: list(map(lambda x: list(map(maybeint, x.split(s))), stdin.splitlines()))
-chunks = lambda: list(map(lambda c: list(map(maybeint, c.splitlines())), stdin.split('\n\n')))
+splits = lambda s: lmap(lambda x: lmap(maybeint, x.split(s)), stdin.splitlines())
+chunks = lambda: lmap(lambda c: lmap(maybeint, c.splitlines()), stdin.split('\n\n'))
 
 
