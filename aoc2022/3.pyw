@@ -18,10 +18,11 @@ strs = lambda: stdin.splitlines()
 chunks = lambda: list(map(lambda c: list(map(maybeint, c.splitlines())), stdin.split('\n\n')))
 
 ans = 0
-for s in strs():
-  a, b = s[:len(s) // 2], s[len(s) // 2:]
+S = strs()
+for i in range(0, len(S), 3):
+  a, b, c = S[i], S[i + 1], S[i + 2]
   for x in a:
-    if x in b:
+    if x in b and x in c:
       if x.isupper():
         ans += ord(x) - ord('A') + 1 + 26
       else:
