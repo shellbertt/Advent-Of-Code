@@ -17,11 +17,11 @@ ints = lambda: list(map(maybeint, stdin.splitlines()))
 strs = lambda: stdin.splitlines()
 chunks = lambda: list(map(lambda c: list(map(maybeint, c.splitlines())), stdin.split('\n\n')))
 
+# exta solution
 ans = 0
 for s in strs():
-  a, b = s.split(',')
-  a = list(map(int, a.split('-')))
-  b = list(map(int, b.split('-')))
-  if a[0] <= b[0] and a[1] >= b[1] or a[0] >= b[0] and a[1] <= b[1]:
-    ans += 1
+  # a, b = map(lambda x: eval('set(range(' + x.replace('-', ',') + '+1))'), s.split(','))
+  # ans += a <= b or b <= a
+  a, b = map(lambda x: eval('set(range(' + x.replace('-', ',') + '+1))'), s.split(','))
+  ans += len(a & b) > 0
 print(ans)
