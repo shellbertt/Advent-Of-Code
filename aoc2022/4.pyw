@@ -22,6 +22,6 @@ for s in strs():
   a, b = s.split(',')
   a = list(map(int, a.split('-')))
   b = list(map(int, b.split('-')))
-  if a[1] >= b[0] and a[1] <= b[1] or a[0] <= b[1] and a[0] >= b[1] and a[1] or b[1] >= a[0] and b[1] <= a[1] or b[0] <= a[1] and b[0] >= a[1] and b[1]:
+  if a[1] >= b[0] and a[1] <= b[1] or a[0] <= b[1] and a[0] >= b[0] or b[1] >= a[0] and b[1] <= a[1] or b[0] <= a[1] and b[0] >= a[0]:
     ans += 1 
 print(ans)
