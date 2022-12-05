@@ -1,4 +1,5 @@
 import sys, collections, functools, itertools, math, re
+words = lambda s: re.findall(r"[a-zA-z]+", s)
 Ints = lambda s: lmap(maybeint, re.findall(r"\d+", s))
 Int = lambda: int(input())
 eg = ''''''
