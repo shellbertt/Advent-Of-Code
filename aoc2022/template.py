@@ -1,5 +1,5 @@
 import sys, collections, functools, itertools, math, re
-Ints = lambda s=input(): lmap(maybeint, re.findall(r"\d+", s))
+Ints = lambda s: lmap(maybeint, re.findall(r"\d+", s))
 Int = lambda: int(input())
 eg = ''''''
 stdin = lambda: sys.stdin.read().rstrip()
