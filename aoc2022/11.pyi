@@ -52,7 +52,7 @@ for c in chunks():
 mc = len(m)
 mic = [0] * mc
 
-mod = functools.reduce(op.mul, [x[1] for x in M])
+mod = math.lcm(*[x[1] for x in M])
 for _ in range(10000):
   for i in range(len(m)):
     while len(m[i]) > 0:
