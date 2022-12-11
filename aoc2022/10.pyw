@@ -165,10 +165,8 @@ chunks = lambda: lmap(lambda c: lmap(maybeint, c.splitlines()), stdin().split('\
 slide = lambda l, n, s=1: [l[i:i + n] for i in range(0, len(l) - n, s)]
 
 crt = ['']
-ans = 0
 x = 1
 i = 0
-seen = set()
 for s in splits():
   if s[0] == 'noop':
     i += 1
@@ -177,25 +175,16 @@ for s in splits():
       crt.append('')
       i = 0
     continue
-  if (i + 20) % 40 == 0 and i not in seen:
-    seen.add(i)
-    ans += i * x
   i += 1
   crt[-1] += '.#'[i in range(x - 1, x + 2)]
   if i % 40 == 0:
     crt.append('')
     i = 0
-  if (i + 20) % 40 == 0 and i not in seen:
-    seen.add(x)
-    ans += i * x
   x += int(s[1])
   i += 1
   crt[-1] += '.#'[i in range(x - 1, x + 2)]
   if i % 40 == 0:
     crt.append('')
     i = 0
-  if (i + 20) % 40 == 0 and i not in seen:
-    seen.add(i)
-    ans += i * x
 
 print(*crt, sep='\n')
