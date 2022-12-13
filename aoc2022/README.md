@@ -4,3 +4,5 @@ I use different file extensions for Day 1 and Day 2 so that VSCode automatically
   py: Part 1
   pyw: Part 2
   pwi: Extra
+
+  I endeavour not to touch my solutions after I write them so they are messy. 
