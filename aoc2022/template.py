@@ -8,7 +8,7 @@ stdin = lambda: sys.stdin.read().rstrip()
 if eg: stdin = lambda: eg
 #################
 lmap = lambda f, *x: list(map(f, *x))
-maybeint = lambda x: int(x) if re.match(r"[+-]?\d+", x) else x
+maybeint = lambda x: int(x) if re.match(r"^[+-]?\d+$", x) else x
 ints = lambda: lmap(maybeint, strs())
 grid = lambda: lmap(lambda x: lmap(maybeint, x), strs())
 strs = lambda: stdin().splitlines()
