@@ -1,7 +1,6 @@
 import sys, collections, functools, itertools, math, operator as op, re
 words = lambda s: re.findall(r"[a-zA-z]+", s)
-Ints = lambda s: lmap(maybeint, re.findall(r"\d+", s))
-Int = lambda: int(input())
+Ints = lambda s: lmap(maybeint, re.findall(r"[+-]?\d+", s))
 eg = ''''''
 stdin = lambda: sys.stdin.read().rstrip()
 #################
