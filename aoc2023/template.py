@@ -1,4 +1,5 @@
-import sys, collections, functools, itertools, math, operator as op, re
+import sys, functools, itertools, math, operator as op, re
+from collections import *
 eg = """"""
 words = lambda s: re.findall(r"[a-zA-z]+", s)
 Ints = lambda s: lmap(maybeint, re.findall(r"[+-]?\d+", s))
@@ -12,6 +13,5 @@ splits = lambda s=None: lmap(lambda x: lmap(maybeint, x.split(s)), strs())
 chunks = lambda: lmap(lambda c: lmap(maybeint, c.splitlines()), stdin().split('\n\n'))
 slide = lambda l, n, s=1: [l[i:i + n] for i in range(0, len(l) - n, s)]
 if eg: stdin = lambda: eg
-
 
 
