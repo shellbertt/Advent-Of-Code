@@ -10,6 +10,6 @@ grid = lambda: lmap(lambda x: lmap(maybeint, x), strs())
 strs = lambda: stdin().splitlines()
 splits = lambda s=None: lmap(lambda x: lmap(maybeint, x.split(s)), strs())
 chunks = lambda: lmap(lambda c: lmap(maybeint, c.splitlines()), stdin().split('\n\n'))
-slide = lambda l, n, s=1: [l[i:i + n] for i in range(0, len(l) - n, s)]
+slide = lambda l, n, s=1: [l[i:i + n] for i in range(0, len(l) - n + 1, s)]
 
 
