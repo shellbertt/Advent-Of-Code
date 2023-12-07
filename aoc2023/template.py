@@ -1,4 +1,5 @@
-import sys, functools, itertools, math, operator as op, re
+import sys, functools, math, re
+from itertools import *
 from collections import *
 words = lambda s: re.findall(r"[a-zA-z]+", s)
 Ints = lambda s: lmap(maybeint, re.findall(r"[+-]?\d+", s))
