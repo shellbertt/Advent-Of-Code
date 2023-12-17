@@ -37,5 +37,4 @@ for r, l in splits():
         if len(s) == len(r) and all(x == "?" or x == y for x, y in zip(r, s)):
             c += 1
     ans += c
-    print(c)
 print(ans)
