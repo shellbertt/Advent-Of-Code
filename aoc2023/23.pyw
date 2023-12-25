@@ -20,23 +20,23 @@ n = len(g[0])
 for j in range(n):
     if g[0][j] == ".":
         break
-
-seen = [n * [0] for _ in range(m)]
-def dfs(i, j):
-    print(i, j)
+ans = - (1 << 55)
+q = deque([(0, j, 0, set())])
+while q:
+    i, j, dist, seen = q.popleft()
+    if (i, j) in seen:
+        continue
+    seen.add((i, j))
     if i == m-1:
-        return 0
-    seen[i][j] = 1
-    ans = - (1 << 55) 
+        print("found", dist)
+        ans = max(ans, dist)
+        continue
     poss = []
     poss.append((i+1, j))
     poss.append((i-1, j))
     poss.append((i, j+1))
     poss.append((i, j-1))
     for x, y in poss:
-        if x in range(m) and y in range(n) and g[x][y] != "#" and not seen[x][y]:
-            ans = max(ans, 1+dfs(x, y))
-    seen[i][j] = 0
-    return ans
-
-print(dfs(0, j))
+        if x in range(m) and y in range(n) and g[x][y] != "#" and (x, y) not in seen:
+            q.append((x, y, dist+1, set(*[seen])))
+print(ans)
