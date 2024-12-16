@@ -1,6 +1,5 @@
-import sys, functools, math, re
-from itertools import *
-from collections import *
+import functools, math, re, sys
+from collections import *; from heapq import *; from itertools import *;
 words = lambda s: re.findall(r"[a-zA-z]+", s)
 Ints = lambda s: lmap(maybeint, re.findall(r"[+-]?\d+", s))
 stdin = lambda: sys.stdin.read().rstrip()
