@@ -15,20 +15,16 @@ slide = lambda l, n, s=1: [l[i:i + n] for i in range(0, len(l) - n + 1, s)]
 r, p = chunks()
 r = list(map(lambda x: Ints(x)[0], r))
 p = Ints(p[0])
-print(r, p)
-val = None
-inst = 0
 def combo(op):
-    print(f"{op=}")
     if op <= 3:
         return op
     else:
         return r[op-4]
+inst = 0
 out = []
 while inst < len(p)-1:
     op = p[inst]
     op2 = p[inst+1]
-    print(op, op2)
     if op == 0:
         r[0] = r[0] // 2 ** combo(op2)
     elif op == 1:
@@ -48,5 +44,4 @@ while inst < len(p)-1:
     elif op == 7:
         r[2] = r[0] // 2 ** combo(op2)
     inst += 2
-print(r)
 print(",".join(map(str, out)))
