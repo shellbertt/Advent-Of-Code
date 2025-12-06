@@ -17,7 +17,13 @@ a = list(map(lambda x: list(map(int, x.split("-"))), stdin().split(",")))
 for l, r in a:
     for x in range(l, r+1):
         s = str(x)
-        l = len(s)
-        if s[:l//2] == s[l//2:]:
-            ans += x
+        m = len(s)
+        for n in range(1, m//2+1):
+            if m % n != 0:
+                continue
+            A = slide(s, n, n)
+            b = A[0]
+            if all(c == b for c in A):
+                ans += x
+                break
 print(ans)
